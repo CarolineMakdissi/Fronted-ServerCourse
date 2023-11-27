@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Carolines gästbok</title>
+  </head>
+
+  <body>
+    <h1>Väkommen till Carolines gästbok!</h1>
+    <p>
+      <strong>
+      Fyll gärna in information om dig själv nedan. Om det finns några
+      funderingar lägg till en kommentar.
+    </p></strong>
+    
+    <!--Guestbook form-->
+    <div class="form-style">
+      <form action="/submit-form" method="post">
+        <label for="namn">Namn:</label>
+        <input type="text" id="namn" name="namn" /> <br />
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" /> <br />
+
+        <label for="homepage">Homepage:</label>
+        <input type="text" id="homepage" name="homepage" /> <br />
+
+        <label for="tel">Tel:</label>
+        <input type="text" id="tel" name="tel" /> <br />
+
+
+        <!--Button input-->
+        <label for="message">Kommentar:</label> <br>
+        <textarea name="message" id="message"></textarea> <br>
+        <button type="submit">Lägg till</button>
+      </form>
+
+    </div>      
+      <div id="users-information" method="post"> <!--Here will the users information show up--> </div> 
+    <!--Guestbook JavaScript-->
+    <script src="guestbook.js"></script>
+
+  </body>
+</html>
