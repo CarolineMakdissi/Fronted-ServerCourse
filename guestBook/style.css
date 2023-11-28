@@ -1,37 +1,37 @@
 /*Global style*/
-@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Outfit:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Outfit:wght@500&display=swap");
 
-
-body{
-background-image: url("backgroundbeige.webp");
-background-repeat: no-repeat;
-background-size:cover;
+body {
+  background-image: url("backgroundbeige.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
-    font-family: 'Edu TAS Beginner', cursive;
-    font-family: 'Outfit', sans-serif;
+  font-family: "Edu TAS Beginner", cursive;
+  font-family: "Outfit", sans-serif;
 }
-
 
 /*Form style*/
-.form-style{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin: 10px;
-    padding: 10px;
-    
+.form-style {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
 }
-.formstyle label,.form-style input, .formstyle button {
-margin-bottom: 20px;
+.formstyle label,
+.form-style input,
+.formstyle button {
+  margin-bottom: 20px;
 }
 /*Users-information style*/
-
-#users-information{
-margin-top: 10px;
-background-color: white;
-margin: 10px;
+#users-information {
+  margin-top: 10px;
+  background-color: white;
+  margin: 10px;
 }
 
-
+p {
+  padding: 5px;
+}
