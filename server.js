@@ -1,9 +1,10 @@
 const express = require("express"); // Installing express
 const app = express(); // Create a express server-object
-const port = 3600; // ... wich is running at "port 3600"
+const port = 3600; // Wich is running at "port 3600"
 
 app.use(express.static("guestbook")); // Needed to process data that is handled with GET
 app.use(express.urlencoded({ extended: true })); // needed to process data that is send with POST
+
 
 /**** GET ****/
 app.get("/", function (req, res) {
@@ -25,6 +26,7 @@ app.post("/submit-form", function (req, res) {
 
 res.send(userData); 
 });
+
 
 app.listen(port, () => { 
 console.log(`Server is running on port ${port}`);
