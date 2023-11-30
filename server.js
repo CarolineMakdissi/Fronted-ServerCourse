@@ -17,7 +17,7 @@ const db = mysql.createConnection({
   database: "forum_db",
 });
 
-app.use(express.urlencoded({ extended: true })); // behövs för att processa data som skickats med POST
+app.use(express.urlencoded({ extended: true })); // needed to process data which is sent wiht POST
 
 app.get("/", function (req, res) {
   const htmlTemplatePath = __dirname + "/guestbook.html";
@@ -29,7 +29,7 @@ app.get("/", function (req, res) {
     db.query("SELECT * FROM guestbook", [], (err, results) => {
       if (err) throw err;
 
-      // om inga inlägg skicka orginal html
+      // if no result, send orginal html
       if (results.length === 0) {
         res.send(htmlData);
       } else {
@@ -39,10 +39,10 @@ app.get("/", function (req, res) {
             commentHTML +
             `<div>${item.message} - skriven av: ${item.name} (${item.email})</div><br />`;
         });
-        // vi lägger in kommentarer i htmlen
+        // putting comments in html
         const finalHTML = htmlData.replace("<!-- NODEJS-DATA-->", commentHTML);
 
-        // Skicka hela html till klienten
+        // Sending html to client
         res.send(finalHTML);
       }
     });
@@ -51,7 +51,7 @@ app.get("/", function (req, res) {
 
 app.post("/submit-guestbook-form", function (req, res) {
   const { namn, email, message } = req.body;
-  // använd ? metoden för att undvika mysql injections
+  // Using ? method to prevent mysql injections
   const query = "INSERT INTO guestbook (name, email, message) VALUES (?, ?, ?)";
 
   db.query(query, [namn, email, message], (err) => {
